@@ -1,0 +1,222 @@
+body {
+    background-color: black;
+    margin: 0;
+}
+
+/* Header */
+/* Nav */
+.navbar {
+    background-color: transparent;  /*Cambie*/
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content:space-between;
+}
+
+/* div logo */
+.logo {
+    width: 60px;
+    margin-left: 30px;
+}
+footer .logo {
+    width: 100px;
+}
+
+/* items nav */
+.container-items {
+    display: flex;
+    align-self: center;
+    margin-right: 30px;
+}
+
+.navbar-item {
+    margin-right: 20px;
+}
+
+.navbar-item:last-child {
+    margin-right: 0;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Cambio de color al pasar el mouse por encima */
+.navbar-item a:hover {
+    color: #ff6600;
+}
+
+
+
+/* --------------- */
+/* Main */
+/* Contenedor Principal Img */
+
+.container-bgImg {
+    max-width: 100%;
+    height: 100vh;             /*Cambie*/
+    background: url(./imagenes/restaurant-1794600_1280.jpg) no-repeat center/cover;
+    margin: 0;
+}
+
+.texto-bgIgm {
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    color: rgb(202, 202, 202);
+    font-size: 4rem;
+    margin: 0;
+}
+
+
+
+/* Menu */
+.menu {
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1170px; 
+    padding-right: 15px; 
+    padding-left: 15px;
+}
+
+.titulo-menu {
+    font-size: 6rem;
+    text-align: center;
+}
+
+
+/* Menu Grid */
+.container-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    font-size: 3rem;
+}
+
+.container-card .card-tarjeta:nth-child(1) {
+    background: url(./imagenes/ramen-4671492_1280.jpg) no-repeat center/cover;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    padding: 20px;
+}
+
+.container-card .card-tarjeta:nth-child(2) {
+    background: url(https://i0.wp.com/myvegetarianroots.com/wp-content/uploads/2020/02/DSC_0067-1.jpeg?w=1920&ssl=1) no-repeat center/cover;
+    grid-column: 1 / 3; 
+    grid-row: 3 / 5;
+    padding: 20px;
+}
+
+.container-card .card-tarjeta:nth-child(3) {
+    background: url(https://www.hwcmagazine.com/wp-content/uploads/2022/12/Glutinous-Rice-Balls-Tangyuan-9013-UPDATED.jpg) no-repeat center/cover;
+    grid-column: 3 / 5;
+    grid-row: 1 / 5;
+    padding: 20px;
+}
+
+
+.container-card .card-tarjeta {
+    background-size: cover;
+    padding: 20px;
+    position: relative;
+}
+
+.card-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-text {
+    color: white;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.card-button {
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    align-self: flex-end;
+    margin-top: 10px; 
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+/* Footer */
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center; /* Centrar contenido del footer */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Columnas del footer */
+.footer-column {
+    text-align: left;
+    margin-right: 30px;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Logo en el footer */
+.footer-column img {
+    max-width: 100px;
+}
+
+/* Copyright footer */
+.footer-info {
+    margin-top: 20px;
+}
