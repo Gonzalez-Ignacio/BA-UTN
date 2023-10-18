@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprint 1</title>
+    <link rel="shortcut icon"
+        href="https://static.vecteezy.com/system/resources/previews/013/362/656/non_2x/chinese-rice-and-chopsticks-free-png.png"
+        type="image/x-icon">
+    <title> Resto Chino </title>
+    <!-- Css -->
     <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Google Font -->
+    <!-- Presentación -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    <!-- Titulo Menu y Catálogo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- Títulos fuera Cards Menu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap" rel="stylesheet">
+    <!-- Card-Title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Encabezado -->
     <header>
         <!-- nav -->
-        <nav class="navbar">
-            <ul class="navbar-list">
+        <nav class="navRestaurante">
+            <ul class="navRestaurante-list">
                 <div class="container-img">
-                    <img class="logo" src="https://cdn.pixabay.com/photo/2020/09/04/01/40/chef-5542642_1280.png" alt="logo">
+                    <img class="logo"
+                        src="https://static.vecteezy.com/system/resources/previews/013/362/656/non_2x/chinese-rice-and-chopsticks-free-png.png"
+                        alt="logo">
                 </div>
                 <div class="container-items">
-                    <li class="navbar-item"><a href="#">Inicio</a></li>
-                    <li class="navbar-item"><a href="#">Acerca de</a></li>
-                    <li class="navbar-item"><a href="#">Servicios</a></li>
-                    <li class="navbar-item"><a href="#">Contacto</a></li>    
+                    <li class="navRestaurante-item"><a href="#">Inicio</a></li>
+                    <li class="navRestaurante-item"><a href="#">Catálogo</a></li>
+                    <li class="navRestaurante-item"><a href="#">Menú</a></li>
+
+                    
                 </div>
             </ul>
         </nav>
@@ -30,6 +61,7 @@
     <main>
 
         <!-- Imagen de fondo del Sketch -->
+        <!-- Presentación -->
         <section>
             <div class="container-bgImg">
                 <h1 class="texto-bgIgm">Tradición china en cada platillo</h1>
@@ -37,40 +69,231 @@
         </section>
 
 
-        <!-- Menu Restaurante -->
+        <!-- Catálogo Restaurante -->
         <section>
-            <div class="menu">
-                <h2 class="titulo-menu"> Catalogo </h2>
+            <div class="catalogo">
+                <h2 class="titulo-catalogo"> Catálogo </h2>
 
                 <div class="container-card">
                     <!-- Tarjeta Comida Especial -->
                     <div class="card-tarjeta card1">
                         <div class="card-content">
-                            <div class="card-image""></div>
-                            <p class="card-text">Menú Especial</p>
-                            <button class="card-button">Ver más</button>
+
+                            <p class=" card-text"> Menú Especial </p>
+                            <button class="card-button"> Ver más </button>
                         </div>
                     </div>
-                    
-                    <!-- Tarjeta Comida Vegana -->
+
+                    <!-- Tarjeta Menu Vegano -->
                     <div class="card-tarjeta card2">
                         <div class="card-content">
-                            <div class="card-image"></div>
-                            <p class="card-text">Comida Vegana</p>
-                            <button class="card-button">Ver más</button>
+                            <p class="card-text"> Menú Vegano </p>
+                            <button class="card-button"> Ver más </button>
                         </div>
                     </div>
-                    
+
                     <!-- Tarjeta Postres -->
                     <div class="card-tarjeta card3">
                         <div class="card-content">
-                            <div class="card-image""></div>
-                            <p class="card-text">Postres</p>
-                            <button class="card-button">Ver más</button>
+                            <p class=" card-text"> Menú Postres </p>
+                            <button class="card-button"> Ver más </button>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+
+        <!-- Menu Restaurante -->
+
+        <section class="container container-menu rounded-4">
+            <h2 class="titulo-menu text-center text-white mb-5"> Menú </h2>
+            <h3 class="fs-1 text-white titulo-fuera-card"> Menú Especial : </h3>
+            <!-- Menu Especia -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 container-card-menu g-4">
+
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://img.freepik.com/fotos-premium/sabrosa-comida-china-arroz-frito-pollo-carne-verduras-frescas_94707-962.jpg?w=2000"
+                            class="card-img-top" alt="Carne con Arroz Frito">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title mb-5"> Carne con Arroz Frito </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://img.freepik.com/fotos-premium/bolas-masa-hervida_670672-1234.jpg"
+                            class="card-img-top" alt="Pan al vapor de Carne">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Pan al vapor de Carne </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://us.123rf.com/450wm/since1985/since19851409/since1985140900931/31392278-chino-tradicional-estofado-de-pollo-contiene-una-variedad-de-hierbas-ginseng-wolfberry-chino.jpg?ver=6"
+                            class="card-img-top" alt="Estofado de carne">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Estofado de carne </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://aprende.com/wp-content/uploads/2022/11/platos-fideos-ramen.png"
+                            class="card-img-top" alt="Ramen de Carne">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Ramen de Carne </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://img.freepik.com/fotos-premium/vista-superior-arroz-al-curry-japones-carne-cerdo-frita-verduras-plato-blanco-negro-palillos_49003-1138.jpg?w=2000"
+                            class="card-img-top" alt="Curry de Carne y Arroz">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Curry de Carne y Arroz </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://img.freepik.com/fotos-premium/plato-pulpo-salsa-comida-china-plato-ilustracion-ai-generativa_845977-1903.jpg"
+                            class="card-img-top" alt="Carne de pulpo">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Carne de pulpo </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Menu Vegano -->
+            <h3 class="titulo-fuera-card fs-1 text-white mt-5"> Menú Vegano : </h3>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 container-card-menu g-4">
+
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://www.comedera.com/wp-content/uploads/2022/06/Arroz-chino-vegano-shutterstock_1561890997.jpg"
+                            class="card-img-top" alt="Arroz Frito">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title mb-5"> Arroz Frito </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://i0.wp.com/www.hmfood.com/wp-content/uploads/%E6%B0%B4%E9%A4%831.jpg"
+                            class="card-img-top" alt="Pan al vapor de Verduras">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Pan al vapor de Verduras </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://i.ytimg.com/vi/wFtX2jvUkYA/maxresdefault.jpg" class="card-img-top"
+                            alt="Brocheta de Tofu y Verduras">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Brocheta de Tofu y Verduras </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://www.recetasnestle.cl/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/d6593ab8d7bf06ec32e9defec8892810.jpg?itok=ZWrfkZhA"
+                            class="card-img-top" alt="Ramen de Verduras">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Ramen de Verduras </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://www.gourmet.cl/wp-content/uploads/2012/07/curry-de-verduras.jpg"
+                            class="card-img-top" alt="Curry de Verduras y Arroz">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Curry de Verduras y Arroz </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- Menu Postres -->
+            <h3 class="titulo-fuera-card fs-1 text-white mt-5"> Menú Postres : </h3>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 container-card-menu g-4">
+
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://img.buzzfeed.com/video-api-prod/assets/bc4b26a92cab46ca906e7e74e56d10af/GlutinousRiceBalls.jpg?resize=1200:*&output-format=jpg&output-quality=auto"
+                            class="card-img-top" alt="Tangyuan">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title mb-5"> Tangyuan </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card text-white">
+                        <img src="https://onehappybite.com/wp-content/uploads/2021/06/Taiwanese-Taro-and-Yam-Balls-Dessert-5-edited.jpg"
+                            class="card-img-top" alt="Taro Balls">
+                        <div class="card-img-overlay ">
+                            <h5 class="card-title mb-5 mb-xl-5"> Taro Balls </h5>
+                            <div class="pb-5"></div>
+                            <button class="btn btn-danger float-end mt-5"> Comprar </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
         </section>
     </main>
 
@@ -86,7 +309,7 @@
                     <li><a href="#">Postres</a></li>
                 </ul>
             </div>
-            
+
             <!-- Columna de Promociones y Ubicación -->
             <div class="footer-column">
                 <h3>Locales</h3>
@@ -95,15 +318,22 @@
                     <li><a href="#">Promociones/Descuentos</a></li>
                 </ul>
             </div>
-            
+
             <!-- Columna de Logo de la Empresa -->
             <div class="footer-column">
-                <img class="logo" src="https://cdn.pixabay.com/photo/2020/09/04/01/40/chef-5542642_1280.png" alt="logo">
+                <img class="logo"
+                    src="https://static.vecteezy.com/system/resources/previews/013/362/656/non_2x/chinese-rice-and-chopsticks-free-png.png"
+                    alt="logo">
             </div>
         </div>
         <div class="footer-info">
             <p>&copy; 2023 Tu Compañía - Todos los derechos reservados.</p>
         </div>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
 </body>
+
 </html>

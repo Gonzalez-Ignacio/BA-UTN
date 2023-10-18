@@ -1,11 +1,11 @@
 body {
-    background-color: black;
+    background-color: black !important;
     margin: 0;
 }
 
 /* Header */
 /* Nav */
-.navbar {
+.navRestaurante {
     background-color: transparent;  /*Cambie*/
     padding: 10px 0;
     position: fixed;
@@ -14,7 +14,7 @@ body {
     z-index: 1;
 }
 
-.navbar-list {
+.navRestaurante-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -27,9 +27,7 @@ body {
     width: 60px;
     margin-left: 30px;
 }
-footer .logo {
-    width: 100px;
-}
+
 
 /* items nav */
 .container-items {
@@ -38,23 +36,23 @@ footer .logo {
     margin-right: 30px;
 }
 
-.navbar-item {
+.navRestaurante-item {
     margin-right: 20px;
 }
 
-.navbar-item:last-child {
+.navRestaurante-item:last-child {
     margin-right: 0;
 }
 
-.navbar-item a {
+.navRestaurante-item a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
 }
 
 /* Cambio de color al pasar el mouse por encima */
-.navbar-item a:hover {
-    color: #ff6600;
+.navRestaurante-item a:hover {
+    color: brown;
 }
 
 
@@ -76,57 +74,66 @@ footer .logo {
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    color: rgb(202, 202, 202);
+    color: rgb(255, 255, 255);
+    font-family: "Tourney";
     font-size: 4rem;
     margin: 0;
-}
-
-
-
-/* Menu */
-.menu {
-    color: white;
-    padding: 10px 0;
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1170px; 
-    padding-right: 15px; 
-    padding-left: 15px;
-}
-
-.titulo-menu {
-    font-size: 6rem;
     text-align: center;
 }
 
 
-/* Menu Grid */
+
+/* Catálogo */
+.catalogo {
+    color: white;
+    background-color: brown;
+    padding: 1px 0 50px 0;
+    width: 100%;
+    margin-top: 3rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1320px; 
+    border-radius: 1rem;
+    padding-right: 45px; 
+    padding-left: 45px;
+    box-shadow: 2px 2px 8px 2px brown;
+}
+
+.titulo-catalogo {
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 48px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+
+/* Catálogo Grid */
 .container-card {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 10px;
-    font-size: 3rem;
+    font-size: 1.2rem;
 }
 
 .container-card .card-tarjeta:nth-child(1) {
     background: url(./imagenes/ramen-4671492_1280.jpg) no-repeat center/cover;
-    grid-column: 1 / 3;
+    grid-column: 1 / 2;
     grid-row: 1 / 3;
     padding: 20px;
+    height: 280px;
 }
 
 .container-card .card-tarjeta:nth-child(2) {
     background: url(https://i0.wp.com/myvegetarianroots.com/wp-content/uploads/2020/02/DSC_0067-1.jpeg?w=1920&ssl=1) no-repeat center/cover;
-    grid-column: 1 / 3; 
+    grid-column: 1 / 2; 
     grid-row: 3 / 5;
     padding: 20px;
 }
 
 .container-card .card-tarjeta:nth-child(3) {
     background: url(https://www.hwcmagazine.com/wp-content/uploads/2022/12/Glutinous-Rice-Balls-Tangyuan-9013-UPDATED.jpg) no-repeat center/cover;
-    grid-column: 3 / 5;
+    grid-column: 2 / 4;
     grid-row: 1 / 5;
     padding: 20px;
 }
@@ -147,26 +154,62 @@ footer .logo {
 }
 
 .card-text {
-    color: white;
-    font-weight: bold;
-    margin-top: 0;
+    background-color: black;
+    color: rgb(255, 255, 255) !important;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
 }
 
 .card-button {
     background-color: brown;
     color: white;
     border: none;
+    border-radius: 7px;
     padding: 10px 20px;
     align-self: flex-end;
     margin-top: 10px; 
-    font-size: 1.3rem;
+    font-size: 16px;
 }
 
 
 
+/* Menu */
+.container-menu {
+    background-color: brown;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    box-shadow: 2px 2px 8px 2px brown;
+}
 
+.titulo-menu {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+}
 
+.titulo-fuera-card {
+    font-family: 'Cormorant SC', serif;
+}
 
+.card-title {
+    background-color: black;
+    color: rgb(255, 255, 255) !important;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+}
+
+.container-menu .container-card-menu img {
+    height:230px;
+}
+
+.menu-linea {
+    width: 50%; /* Ancho de la línea (corta en el medio) */
+    height: 1px; /* Grosor de la línea */
+    background-color: #ffffff; /* Color de la línea */
+    margin: 10px auto; /* Espacio entre la línea y el contenido */
+}
+
+/* --------------- */
 /* Footer */
 
 
@@ -213,10 +256,82 @@ footer .logo {
 
 /* Logo en el footer */
 .footer-column img {
-    max-width: 100px;
+    width: 150px;
 }
+
 
 /* Copyright footer */
 .footer-info {
     margin-top: 20px;
+}
+
+
+
+
+
+/* @Media */
+
+/* Catálogo */
+
+@media (max-width: 1400px) {
+    .catalogo{
+        max-width: 1320px;
+    }
+}
+@media (max-width: 1399px) {
+    .catalogo{
+        max-width: 1140px;
+    }
+}
+@media (max-width: 1199px) {
+    .catalogo{
+        max-width: 960px;
+    }
+}
+@media (max-width: 991px) {
+    .catalogo{
+        max-width: 720px;
+    }
+}
+@media (max-width: 767px) {
+    /* Catalogo */
+    .catalogo{
+        max-width: 540px;
+        .container-card .card-tarjeta:nth-child(1) {
+            height: 190px;
+        }
+    }
+
+    /* Menu */
+
+    .container-card-menu .col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .card {
+        width: 400px;
+    }
+}
+@media (max-width: 575px) {
+    /* Catalogo */
+    .catalogo{
+        max-width: 575px;
+    }
+    .container-card .card-tarjeta:nth-child(1) {
+        height: 170px;
+    }
+
+    /* Menu */
+
+    .container-card-menu .col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .card {
+        width: 400px;
+    }
 }
