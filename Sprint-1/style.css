@@ -197,6 +197,10 @@ body {
     font-family: 'Cormorant SC', serif;
 }
 
+.container-card-menu .card {
+    border: none;
+}
+
 .card-title {
     background-color: black;
     color: rgb(255, 255, 255) !important;
@@ -238,7 +242,7 @@ body {
 /* Columnas del footer */
 .footer-column {
     text-align: left;
-    margin-right: 30px;
+    /* margin-right: 30px; */
 }
 
 .footer-column h3 {
@@ -339,5 +343,12 @@ body {
     }
     .card {
         width: 400px;
+    }
+
+
+    /* Footer */
+    .footer-column img {
+        width: 150px;
+        margin-left: 120px;
     }
 }
