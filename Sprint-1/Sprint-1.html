@@ -51,7 +51,23 @@
                     <li class="navRestaurante-item"><a href="#">Catálogo</a></li>
                     <li class="navRestaurante-item"><a href="#">Menú</a></li>
 
-                    
+                    <!-- Carrito de Compras con OffCanvas de Bootstrap -->
+                    <li class="navRestaurante-item"><a href="#">
+                        <i class="bi bi-cart4 text-white" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+    
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                            aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel"> Carrito de Compras </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <button class="btn w-100 btn-brown text-center"> Carrito de compras vació </button>
+                            </div>
+                        </div>
+                    </a></li>
                 </div>
             </ul>
         </nav>

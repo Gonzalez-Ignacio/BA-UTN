@@ -55,6 +55,12 @@ body {
     color: brown;
 }
 
+/* Carrito de compras */
+.btn-brown {
+    background-color: brown !important;
+    color: white !important;
+}
+
 
 
 /* --------------- */
