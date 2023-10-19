@@ -49,12 +49,12 @@
                         alt="logo">
                 </div>
                 <div class="container-items">
-                    <li class="navRestaurante-item"><a href="#">Inicio</a></li>
-                    <li class="navRestaurante-item"><a href="#">Catálogo</a></li>
-                    <li class="navRestaurante-item"><a href="#">Menú</a></li>
+                    <li class="navRestaurante-item"><a href="#inicio">Inicio</a></li>
+                    <li class="navRestaurante-item"><a href="#catalogo">Catálogo</a></li>
+                    <li class="navRestaurante-item"><a href="#menu">Menú</a></li>
 
                     <!-- Carrito de Compras con OffCanvas de Bootstrap -->
-                    <li class="navRestaurante-item"><a href="#">
+                    <li class="navRestaurante-item" data-bs-toggle="offcanvas">
                             <i class="bi bi-cart4 text-white" type="button" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
 
@@ -80,7 +80,7 @@
 
         <!-- Imagen de fondo del Sketch -->
         <!-- Presentación -->
-        <section>
+        <section id="inicio">
             <div class="container-bgImg">
                 <h1 class="animate__animated animate__fadeInTopRight texto-bgIgm">Tradición china en cada platillo</h1>
             </div>
@@ -88,7 +88,7 @@
 
 
         <!-- Catálogo Restaurante -->
-        <section>
+        <section id="catalogo">
             <div class="catalogo">
                 <h2 class="titulo-catalogo"> Catálogo </h2>
 
@@ -98,7 +98,7 @@
                         <div class="card-content">
 
                             <p class=" card-text"> Menú Especial </p>
-                            <button class="card-button"> Ver más </button>
+                            <a class="card-button" href="#menu-especial"> Ver más </a>
                         </div>
                     </div>
 
@@ -106,15 +106,15 @@
                     <div class="card-tarjeta card2">
                         <div class="card-content">
                             <p class="card-text"> Menú Vegano </p>
-                            <button class="card-button"> Ver más </button>
+                            <a class="card-button" href="#menu-vegano"> Ver más </a>
                         </div>
                     </div>
 
                     <!-- Tarjeta Postres -->
                     <div class="card-tarjeta card3">
                         <div class="card-content">
-                            <p class=" card-text"> Menú Postres </p>
-                            <button class="card-button"> Ver más </button>
+                            <p class=" card-text" > Menú Postres </p>
+                            <a class="card-button" href="#menu-postres"> Ver más </a>
                         </div>
                     </div>
                 </div>
@@ -124,9 +124,9 @@
 
         <!-- Menu Restaurante -->
 
-        <section class="container container-menu rounded-4">
+        <section class="container container-menu rounded-4" id="menu">
             <h2 class="titulo-menu text-center text-white mb-5"> Menú </h2>
-            <h3 class="fs-1 text-white titulo-fuera-card"> Menú Especial : </h3>
+            <h3 class="fs-1 text-white titulo-fuera-card" id="menu-especial"> Menú Especial : </h3>
             <!-- Menu Especia -->
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 container-card-menu g-4">
 
@@ -208,7 +208,7 @@
 
 
             <!-- Menu Vegano -->
-            <h3 class="titulo-fuera-card fs-1 text-white mt-5"> Menú Vegano : </h3>
+            <h3 class="titulo-fuera-card fs-1 text-white mt-5" id="menu-vegano"> Menú Vegano : </h3>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 container-card-menu g-4">
 
 
@@ -278,7 +278,7 @@
 
 
             <!-- Menu Postres -->
-            <h3 class="titulo-fuera-card fs-1 text-white mt-5"> Menú Postres : </h3>
+            <h3 class="titulo-fuera-card fs-1 text-white mt-5" id="menu-postres"> Menú Postres : </h3>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 container-card-menu g-4">
 
 
