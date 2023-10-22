@@ -203,10 +203,19 @@ body {
 }
 
 .card-title {
-    background-color: black;
+    background: rgba(0, 0, 0, 0.8);
     color: rgb(255, 255, 255) !important;
     font-family: 'Anton', sans-serif;
     text-align: center;
+}
+
+.card-precio {
+    background: rgba(0, 0, 0, 0.7);
+    color: rgb(255, 255, 255) !important;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    padding: 0 40px;
+    margin-top: 57px;
 }
 
 .container-menu .container-card-menu img {
