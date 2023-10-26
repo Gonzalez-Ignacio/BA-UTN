@@ -6,7 +6,8 @@ body {
 /* Header */
 /* Nav */
 .navRestaurante {
-    background-color: transparent;  /*Cambie*/
+    background-color: transparent;
+    /*Cambie*/
     padding: 10px 0;
     position: fixed;
     top: 0;
@@ -19,7 +20,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 /* div logo */
@@ -69,7 +70,8 @@ body {
 
 .container-bgImg {
     max-width: 100%;
-    height: 100vh;             /*Cambie*/
+    height: 100vh;
+    /*Cambie*/
     background: url(./imagenes/restaurant-1794600_1280.jpg) no-repeat center/cover;
     margin: 0;
 }
@@ -98,9 +100,9 @@ body {
     margin-top: 3rem;
     margin-right: auto;
     margin-left: auto;
-    max-width: 1320px; 
+    max-width: 1320px;
     border-radius: 1rem;
-    padding-right: 45px; 
+    padding-right: 45px;
     padding-left: 45px;
     box-shadow: 2px 2px 8px 2px brown;
 }
@@ -132,7 +134,7 @@ body {
 
 .container-card .card-tarjeta:nth-child(2) {
     background: url(https://i0.wp.com/myvegetarianroots.com/wp-content/uploads/2020/02/DSC_0067-1.jpeg?w=1920&ssl=1) no-repeat center/cover;
-    grid-column: 1 / 2; 
+    grid-column: 1 / 2;
     grid-row: 3 / 5;
     padding: 20px;
 }
@@ -173,7 +175,7 @@ body {
     border-radius: 7px;
     padding: 10px 20px;
     align-self: flex-end;
-    margin-top: 10px; 
+    margin-top: 10px;
     font-size: 16px;
     text-decoration: none;
 }
@@ -219,15 +221,90 @@ body {
 }
 
 .container-menu .container-card-menu img {
-    height:230px;
+    height: 230px;
 }
 
 .menu-linea {
-    width: 50%; /* Ancho de la línea (corta en el medio) */
-    height: 1px; /* Grosor de la línea */
-    background-color: #ffffff; /* Color de la línea */
-    margin: 10px auto; /* Espacio entre la línea y el contenido */
+    width: 50%;
+    /* Ancho de la línea (corta en el medio) */
+    height: 1px;
+    /* Grosor de la línea */
+    background-color: #ffffff;
+    /* Color de la línea */
+    margin: 10px auto;
+    /* Espacio entre la línea y el contenido */
 }
+
+
+
+
+/* Carrito de Compras */
+.container-carrito {
+    display: flex;
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+.columna-carrito {
+    flex: 1;
+    padding: 10px;
+}
+
+.imagen-producto {
+    width: 185px;
+    height: 160px;
+    object-fit: cover;
+}
+
+.fila-carrito {
+    margin: 10px 0;
+}
+
+.titulo-producto {
+    font-size: 16px;
+    margin: 0;
+}
+
+.precio-producto {
+    margin: 0;
+}
+
+.imagen-eliminar {              
+    width: 20px;
+}
+
+.imagen-eliminar:hover {
+    width: 20px;
+    content: url(https://cdn-icons-png.flaticon.com/512/3221/3221845.png);
+}
+
+.offcanvas {
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ff0000 !important;
+    border-radius: 6px;
+}
+
+
+.offcanvas-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.offcanvas-body::-webkit-scrollbar-thumb {
+    background: linear-gradient(black,grey);
+    border-radius: 6px;
+}
+
+
+
+
+
 
 /* --------------- */
 /* Footer */
@@ -237,7 +314,8 @@ body {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
-    text-align: center; /* Centrar contenido del footer */
+    text-align: center;
+    /* Centrar contenido del footer */
 }
 
 .footer-content {
@@ -294,29 +372,35 @@ body {
 /* Catálogo */
 
 @media (max-width: 1400px) {
-    .catalogo{
+    .catalogo {
         max-width: 1320px;
     }
 }
+
 @media (max-width: 1399px) {
-    .catalogo{
+    .catalogo {
         max-width: 1140px;
     }
 }
+
 @media (max-width: 1199px) {
-    .catalogo{
+    .catalogo {
         max-width: 960px;
     }
 }
+
 @media (max-width: 991px) {
-    .catalogo{
+    .catalogo {
         max-width: 720px;
     }
 }
+
 @media (max-width: 767px) {
+
     /* Catalogo */
-    .catalogo{
+    .catalogo {
         max-width: 540px;
+
         .container-card .card-tarjeta:nth-child(1) {
             height: 190px;
         }
@@ -330,15 +414,19 @@ body {
         align-items: center;
         text-align: center;
     }
+
     .card {
         width: 400px;
     }
 }
+
 @media (max-width: 575px) {
+
     /* Catalogo */
-    .catalogo{
+    .catalogo {
         max-width: 575px;
     }
+
     .container-card .card-tarjeta:nth-child(1) {
         height: 170px;
     }
@@ -351,6 +439,7 @@ body {
         align-items: center;
         text-align: center;
     }
+
     .card {
         width: 400px;
     }
