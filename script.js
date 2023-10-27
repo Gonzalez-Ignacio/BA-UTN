@@ -18,16 +18,36 @@ btnComprar.forEach((boton, index) => {
         const priceText = priceCardText.textContent;
         const priceProduct = parseInt(priceText);
         console.log(priceProduct);
-        
-        // Guardar las productos en el carrito
-        carrito.push({imagen:imgCard, titulo:titleProduct, precio:priceProduct});
-        
+
+        //Verificamos si el producto ya existe o no
+        const productExisting = carrito.findIndex(product => product.titulo === titleProduct);
+
+        if (productExisting !== -1) {
+
+            const amount = carrito[productExisting];
+            amount.cantidad++;
+            amount.precioTotal = amount.cantidad * amount.precio;
+            console.log("Cantidad al hacer click en btn:   " + amount.cantidad);
+            console.log("Precio al hacer click en btn:   " + amount.precioTotal);
+            // Actualiza el precio en el HTML
+            const priceRender = document.querySelectorAll(".precio-producto")[productExisting];
+            priceRender.textContent = `$${amount.precioTotal}`;
+            // Actualiza la cantidad en el HTML
+            const amountRender = document.querySelectorAll(".cantidad-producto")[productExisting];
+            amountRender.textContent = amount.cantidad;
+            console.log(amountRender);
+            console.log(priceRender);
+        } else {
+            // Guardar las productos en el carrito
+            carrito.push({ imagen: imgCard, titulo: titleProduct, precio: priceProduct, cantidad: 1  });
+        }
+
         // LLamar Funcion para renderizar las cards dentro del carrito de compras.
-        renderCard(priceProduct);
+        renderCard();
     })
 })
 // Div renderizado dentro del div vació
-function renderCard(priceProduct) {
+function renderCard() {
     const cardProduct = carrito.map((product) => `
         <div class="container-carrito"> 
             <div class="columna-carrito"> 
@@ -45,7 +65,7 @@ function renderCard(priceProduct) {
                 <div class="fila-carrito">
                     <div id="carrito-cantidad"> 
                         <button class="cantidad-restar"> - </button>
-                        <span class="cantidad-producto"> 1 </span>
+                        <span class="cantidad-producto"> ${product.cantidad} </span>
                         <button class="cantidad-sumar"> + </button>
                     </div>
                 </div>
@@ -61,7 +81,7 @@ function renderCard(priceProduct) {
 
 
     //LLamar boton de restar y sumar la cantidad de productos
-    const btnRestar= document.querySelectorAll(".cantidad-restar");
+    const btnRestar = document.querySelectorAll(".cantidad-restar");
     const btnSumar = document.querySelectorAll(".cantidad-sumar");
 
     // Restar Producto
@@ -71,14 +91,14 @@ function renderCard(priceProduct) {
             let amountProduct = parseInt(amount.textContent);
             //Mientras que sea mayor a uno (para que el producto no diga "0")
             if (amountProduct > 1) {
-                amountProduct --;
+                amountProduct--;
                 amount.textContent = amountProduct;
                 carrito[index].cantidad = amountProduct;
                 carrito[index].precioTotal = carrito[index].cantidad * carrito[index].precio;
                 console.log(carrito[index].precioTotal)
                 // Actualiza el precio en el HTML
-            const precioElement = document.querySelectorAll(".precio-producto")[index];
-            precioElement.textContent = `$${carrito[index].precioTotal}`;
+                const precioElement = document.querySelectorAll(".precio-producto")[index];
+                precioElement.textContent = `$${carrito[index].precioTotal}`;
             }
         })
     })
@@ -86,16 +106,16 @@ function renderCard(priceProduct) {
     //Sumar Producto
     btnSumar.forEach((btnSuma, index) => {
         btnSuma.addEventListener("click", () => {
-            const amount = document.querySelectorAll(".cantidad-producto")[index];
-            let amountProduct = parseInt(amount.textContent);
-            amountProduct ++
-            amount.textContent = amountProduct;
-            carrito[index].cantidad = amountProduct;
+            const amount = carrito[index];
+            amount.cantidad++;
             carrito[index].precioTotal = carrito[index].cantidad * carrito[index].precio;
             console.log(carrito[index].precioTotal)
             // Actualiza el precio en el HTML
-            const precioElement = document.querySelectorAll(".precio-producto")[index];
-            precioElement.textContent = `$${carrito[index].precioTotal}`;
+            const priceRender = document.querySelectorAll(".precio-producto")[index];
+            priceRender.textContent = `$${carrito[index].precioTotal}`;
+            const amountRender = document.querySelectorAll(".cantidad-producto")[index];
+            amountRender.textContent = carrito[index].cantidad;
+            console.log(priceRender)
         })
     })
 }
