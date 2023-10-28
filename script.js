@@ -36,12 +36,15 @@ btnComprar.forEach((boton, index) => {
             const amountRender = document.querySelectorAll(".cantidad-producto")[productExisting];
             amountRender.textContent = amount.cantidad;
             console.log(amountRender);
-            console.log(priceRender);
+
+            console.log(btn);
         } else {
             // Guardar las productos en el carrito
-            carrito.push({ imagen: imgCard, titulo: titleProduct, precio: priceProduct, cantidad: 1  });
+            carrito.push({ imagen: imgCard, titulo: titleProduct, precio: priceProduct, cantidad: 1 });
         }
 
+        // Eliminar o Agregar clase "fixed" para el boton de Comprar
+        claseDeBotonComprar();
         // LLamar Funcion para renderizar las cards dentro del carrito de compras.
         renderCard();
     })
@@ -83,10 +86,11 @@ function renderCard() {
     //LLamar boton de restar y sumar la cantidad de productos
     const btnRestar = document.querySelectorAll(".cantidad-restar");
     const btnSumar = document.querySelectorAll(".cantidad-sumar");
+    const btnEliminar = document.querySelectorAll(".imagen-eliminar");
 
     // Restar Producto
-    btnRestar.forEach((btnResta, index) => {
-        btnResta.addEventListener("click", () => {
+    btnRestar.forEach((btnRestarProducto, index) => {
+        btnRestarProducto.addEventListener("click", () => {
             const amount = document.querySelectorAll(".cantidad-producto")[index]; //[index] para que itere en todas las cards y no solo la primera
             let amountProduct = parseInt(amount.textContent);
             //Mientras que sea mayor a uno (para que el producto no diga "0")
@@ -104,8 +108,8 @@ function renderCard() {
     })
 
     //Sumar Producto
-    btnSumar.forEach((btnSuma, index) => {
-        btnSuma.addEventListener("click", () => {
+    btnSumar.forEach((btnSumaProducto, index) => {
+        btnSumaProducto.addEventListener("click", () => {
             const amount = carrito[index];
             amount.cantidad++;
             carrito[index].precioTotal = carrito[index].cantidad * carrito[index].precio;
@@ -118,5 +122,33 @@ function renderCard() {
             console.log(priceRender)
         })
     })
+
+    // Eliminar Producto
+    btnEliminar.forEach((btnEliminarProducto, index) => {
+        btnEliminarProducto.addEventListener("click", () => {
+            // Eliminación de contenedor
+            const deleteElement = document.querySelectorAll(".container-carrito")[index];
+            deleteElement.remove()
+            // Eliminación desde la lista
+            carrito.splice(index, 1);
+            // Eliminar o Agregar clase "fixed" para el boton de Comprar
+            // Actualizar vista de boton
+            claseDeBotonComprar()
+            renderCard();
+        })
+    })
 }
 
+function claseDeBotonComprar() {
+    const classBtnBuy = document.querySelector(".carrito-vacio");
+    const classProductoComida = document.querySelector(".producto-comida");
+    if (carrito.length === 0) {
+        classBtnBuy.classList.remove("fixed");
+        classBtnBuy.textContent = "Carrito de Compras Vacio"
+        classProductoComida.classList.remove("altura-container");
+    } else {
+        classBtnBuy.classList.add("fixed");
+        classBtnBuy.textContent = "Finalizar Compra"
+        classProductoComida.classList.add("altura-container");
+    }
+}

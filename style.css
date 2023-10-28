@@ -260,6 +260,10 @@ body {
     margin: 10px 0;
 }
 
+.altura-container {
+    height: 100%;
+}
+
 .titulo-producto {
     font-size: 16px;
     margin: 0;
@@ -291,6 +295,9 @@ body::-webkit-scrollbar-thumb {
     border-radius: 6px;
 }
 
+.offcanvas-body {
+    margin-bottom: 120px;
+}
 
 .offcanvas-body::-webkit-scrollbar {
     width: 10px;
@@ -450,4 +457,16 @@ body::-webkit-scrollbar-thumb {
         width: 150px;
         margin-left: 120px;
     }
+}
+
+
+.carrito-vacio.fixed {
+    position: absolute;
+    bottom: 7px;
+    left: auto;
+    width: 92% !important;
+    text-align: center;
+    background-color: #fff; /* Cambia el color de fondo según tus preferencias */
+    padding: 10px 0;
+    border-top: 1px solid #ccc; /* Opcional: agregar una línea superior */
 }
