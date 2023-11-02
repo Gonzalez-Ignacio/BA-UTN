@@ -14,6 +14,9 @@ body {
     width: 100%;
     z-index: 1;
 }
+.bg-scroll {
+    background-color: brown;
+}
 
 .navRestaurante-list {
     list-style: none;
@@ -52,9 +55,13 @@ body {
 }
 
 /* Cambio de color al pasar el mouse por encima */
-.navRestaurante-item a:hover {
+.navRestaurante-item a:hover, .navRestaurante .bi-cart4:hover::before {
     color: brown;
 }
+.bg-scroll .navRestaurante-item a:hover, .bg-scroll .bi-cart4:hover::before{
+    color: black !important;
+}
+
 
 /* Carrito de compras */
 .btn-brown {
@@ -111,6 +118,7 @@ body {
     font-size: 6rem;
     text-align: center;
     margin-bottom: 48px;
+    margin-top: 64px;
     font-family: 'Bebas Neue', sans-serif;
 }
 
@@ -187,6 +195,7 @@ body {
     background-color: brown;
     margin-top: 5rem;
     margin-bottom: 3rem;
+    padding-top: 64px;
     padding-bottom: 3rem;
     box-shadow: 2px 2px 8px 2px brown;
 }
@@ -194,6 +203,11 @@ body {
 .titulo-menu {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 6rem;
+}
+
+.divisor {
+    color: brown;
+    margin-bottom: 60px;
 }
 
 .titulo-fuera-card {
@@ -240,6 +254,8 @@ body {
 
 /* Carrito de Compras */
 .container-carrito {
+    background-color: brown;
+    color: white;
     display: flex;
     border: 1px solid #ccc;
     margin: 10px;
@@ -257,33 +273,39 @@ body {
 }
 
 .fila-carrito {
-    margin: 10px 0;
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 16px 0;
+}
+.fila-carrito:nth-child(3) {
+    font-family: initial; 
 }
 
 .altura-container {
-    height: 100%;
+    height: 97%;
 }
 
 .titulo-producto {
-    font-size: 16px;
+    font-size: 19px;
     margin: 0;
 }
 
 .precio-producto {
     margin: 0;
+    font-size: 20px;
 }
 
 .imagen-eliminar {              
-    width: 20px;
+    width: 23px;
 }
 
 .imagen-eliminar:hover {
-    width: 20px;
+    width: 23px;
     content: url(https://cdn-icons-png.flaticon.com/512/3221/3221845.png);
 }
 
 .offcanvas {
-    overflow-y: scroll;
+    /* Controlar el ancho del OffCanvas Activado */
+    --bs-offcanvas-width: 500px !important;
 }
 
 body::-webkit-scrollbar {
@@ -308,8 +330,37 @@ body::-webkit-scrollbar-thumb {
     border-radius: 6px;
 }
 
+.carrito-vacio.fixed {
+    position: absolute;
+    bottom: 7px;
+    left: auto;
+    width: 92% !important;
+    text-align: center;
+    background-color: #fff; /* Cambia el color de fondo según tus preferencias */
+    padding: 10px 0;
+    border-top: 1px solid #ccc; /* Opcional: agregar una línea superior */
+}
 
-
+.container-precio-total {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 55px;
+    left: auto;
+    width: 92% !important;
+    font-family: "Anton", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+.texto-precio-total {
+    margin-left: 3px;
+}
+.precio-total {
+    margin-right: 5px;
+}
 
 
 
@@ -318,11 +369,10 @@ body::-webkit-scrollbar-thumb {
 
 
 .footer {
-    background-color: #333;
+    background-color: brown;
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    /* Centrar contenido del footer */
 }
 
 .footer-content {
@@ -457,16 +507,4 @@ body::-webkit-scrollbar-thumb {
         width: 150px;
         margin-left: 120px;
     }
-}
-
-
-.carrito-vacio.fixed {
-    position: absolute;
-    bottom: 7px;
-    left: auto;
-    width: 92% !important;
-    text-align: center;
-    background-color: #fff; /* Cambia el color de fondo según tus preferencias */
-    padding: 10px 0;
-    border-top: 1px solid #ccc; /* Opcional: agregar una línea superior */
 }

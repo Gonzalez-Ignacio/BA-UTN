@@ -7,48 +7,39 @@ btnComprar.forEach((boton, index) => {
     boton.addEventListener("click", () => {
         // Obtener Link de imagen
         const imgCard = cards[index].querySelector(".card img").src;
-        const imagenProduct = imgCard
+        const imagenProduct = imgCard;
         console.log(imagenProduct);
+
         // Obtener Titulo
         const titleCard = cards[index].querySelector(".card-title");
         const titleProduct = titleCard.textContent;
         console.log(titleProduct);
+
         // Obtener Precio
         const priceCardText = cards[index].querySelector(".text-precio");
         const priceText = priceCardText.textContent;
         const priceProduct = parseInt(priceText);
         console.log(priceProduct);
 
-        //Verificamos si el producto ya existe o no
+        // Verificamos si el producto ya existe o no
         const productExisting = carrito.findIndex(product => product.titulo === titleProduct);
 
         if (productExisting !== -1) {
-
             const amount = carrito[productExisting];
             amount.cantidad++;
-            amount.precioTotal = amount.cantidad * amount.precio;
-            console.log("Cantidad al hacer click en btn:   " + amount.cantidad);
-            console.log("Precio al hacer click en btn:   " + amount.precioTotal);
-            // Actualiza el precio en el HTML
-            const priceRender = document.querySelectorAll(".precio-producto")[productExisting];
-            priceRender.textContent = `$${amount.precioTotal}`;
-            // Actualiza la cantidad en el HTML
-            const amountRender = document.querySelectorAll(".cantidad-producto")[productExisting];
-            amountRender.textContent = amount.cantidad;
-            console.log(amountRender);
-
-            console.log(btn);
         } else {
             // Guardar las productos en el carrito
             carrito.push({ imagen: imgCard, titulo: titleProduct, precio: priceProduct, cantidad: 1 });
         }
 
-        // Eliminar o Agregar clase "fixed" para el boton de Comprar
+        // Eliminar o Agregar clase "fixed" para el botón de Comprar
         claseDeBotonComprar();
-        // LLamar Funcion para renderizar las cards dentro del carrito de compras.
+        // Agregar "div" Precio Total
+        agregarPrecioTotal()
+        // Llamar Función para renderizar las cards dentro del carrito de compras.
         renderCard();
-    })
-})
+    });
+});
 // Div renderizado dentro del div vació
 function renderCard() {
     const cardProduct = carrito.map((product) => `
@@ -62,7 +53,7 @@ function renderCard() {
                 </div>
                 
                 <div class="fila-carrito">
-                    <p class="precio-producto">$${product.precio}</p>
+                    <p class="precio-producto">$${product.precio * product.cantidad}</p>
                 </div>
                 
                 <div class="fila-carrito">
@@ -103,6 +94,7 @@ function renderCard() {
                 // Actualiza el precio en el HTML
                 const precioElement = document.querySelectorAll(".precio-producto")[index];
                 precioElement.textContent = `$${carrito[index].precioTotal}`;
+                agregarPrecioTotal();
             }
         })
     })
@@ -120,6 +112,7 @@ function renderCard() {
             const amountRender = document.querySelectorAll(".cantidad-producto")[index];
             amountRender.textContent = carrito[index].cantidad;
             console.log(priceRender)
+            agregarPrecioTotal();
         })
     })
 
@@ -132,8 +125,10 @@ function renderCard() {
             // Eliminación desde la lista
             carrito.splice(index, 1);
             // Eliminar o Agregar clase "fixed" para el boton de Comprar
+            claseDeBotonComprar();
+            // Actualizar Precio al Eliminar
+            agregarPrecioTotal();
             // Actualizar vista de boton
-            claseDeBotonComprar()
             renderCard();
         })
     })
@@ -152,3 +147,39 @@ function claseDeBotonComprar() {
         classProductoComida.classList.add("altura-container");
     }
 }
+
+function agregarPrecioTotal() {
+    const divPrecioTotal = document.getElementById("precio-total");
+    if (carrito.length > 0) {
+        let precioTodosProductos = 0;
+
+        for (const productosTotal of carrito) {
+            precioTodosProductos += productosTotal.precio * productosTotal.cantidad
+        }
+
+        const renderPrecioTotal = () => {
+            return `
+            <div class="container-precio-total"> 
+                <span class="texto-precio-total"> Precio Total: </span>
+                <span class="precio-total"> $${precioTodosProductos} </span>
+            </div>
+            `
+        }
+        divPrecioTotal.innerHTML = renderPrecioTotal()
+    } else {
+        divPrecioTotal.innerHTML = ""
+    }
+    renderCard()
+}
+
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navRestaurante");
+    const scrollY = window.scrollY;
+    const scrollYPosition = 69
+
+    if (scrollY > scrollYPosition) {
+        navbar.classList.add("bg-scroll");
+    }else {
+        navbar.classList.remove("bg-scroll");
+    }
+})
