@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll(".card");
 const btnComprar = document.querySelectorAll(".btn-comprar");
 const carrito = []
+let precioTodosProductos = 0;
 
 // Iterar en cada boton de las cards
 btnComprar.forEach((boton, index) => {
@@ -134,6 +135,7 @@ function renderCard() {
     })
 }
 
+// Agregamos Clase al Boton Comprar dentro del carrito y cambiamos la altura del contenedor de todas las cards
 function claseDeBotonComprar() {
     const classBtnBuy = document.querySelector(".carrito-vacio");
     const classProductoComida = document.querySelector(".producto-comida");
@@ -148,15 +150,15 @@ function claseDeBotonComprar() {
     }
 }
 
+// Se agrega el Precio Toal dentro del Carrito
 function agregarPrecioTotal() {
     const divPrecioTotal = document.getElementById("precio-total");
     if (carrito.length > 0) {
-        let precioTodosProductos = 0;
+        precioTodosProductos = 0;
 
         for (const productosTotal of carrito) {
             precioTodosProductos += productosTotal.precio * productosTotal.cantidad
         }
-
         const renderPrecioTotal = () => {
             return `
             <div class="container-precio-total"> 
@@ -165,13 +167,71 @@ function agregarPrecioTotal() {
             </div>
             `
         }
-        divPrecioTotal.innerHTML = renderPrecioTotal()
+        divPrecioTotal.innerHTML = renderPrecioTotal(precioTodosProductos)
     } else {
         divPrecioTotal.innerHTML = ""
     }
     renderCard()
 }
 
+// Renderizacion de Modal al Finalizar Compra
+const btnCompraFinalizada = document.querySelector(".carrito-vacio");
+const modal = document.getElementById("modal-compra-finalizada");
+const fondoOscuroModal = document.querySelector(".fondo-oscuro-modal");
+btnCompraFinalizada.addEventListener("click", () => {
+    // Elegir una mesa entre 1 y 20
+    const mesaReservada = Math.floor(Math.random() * 20) + 1;
+    // Renderizar modal
+    if (carrito.length > 0) {
+        // Damos estilo para sacar la clase display:none tanto al modal, como al fondo-oscuro-modal
+        modal.style.display = "block"
+        fondoOscuroModal.style.display = "block"
+
+        // Damos los titulos a mostrar
+        const tituloPlatillo = carrito.map(producto => producto.titulo).join(', ');
+        // El modal renderiza:
+        const renderModal = () => {
+            return `
+            <div class="container-modal"> 
+                <div class="modal-content"> 
+                    <span class="modal-close"> <i class="bi bi-x-lg img-close"></i> </span>
+                    <h2 class="titulo-modal"> Compra Finalizada </h2>
+                    <hr>
+                    <p class="texto-modal">Usted tiene reservada la mesa: <span class="texto-relevante-modal">${mesaReservada}</span></p>
+                    <p class="texto-modal">Sus platillos seleccionados son: <span class="texto-relevante-modal">${tituloPlatillo}</span></p>
+                    <p class="texto-modal">El total a pagar en caja será de: <span class="texto-relevante-modal"> $${precioTodosProductos} </span></p>
+                    <hr>
+                    <button class="boton-modal"> Aceptar </button>
+                </div>
+            </div>
+        `
+
+        }
+        modal.innerHTML = renderModal(precioTodosProductos);
+        //Cerrar modal con la imagen "x"
+        const btnCloseModal = modal.querySelector(".img-close");
+        btnCloseModal.addEventListener("click", () => {
+            // Display block a none
+            cerrarModal()
+        })
+        // Cerrar Modal con boton "aceptar"
+        const btnModal = modal.querySelector(".boton-modal");
+        btnModal.addEventListener("click", () => {
+            cerrarModal()
+        })
+        // Cerrar Modal con click fuera del modal
+        fondoOscuroModal.addEventListener("click", () => {
+            cerrarModal()
+        })
+        function cerrarModal() {
+            modal.style.display = "none";
+            fondoOscuroModal.style.display = "none";
+        }
+    }
+
+})
+
+// Damos una clase al hacer scroll
 window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navRestaurante");
     const scrollY = window.scrollY;
@@ -179,7 +239,7 @@ window.addEventListener("scroll", () => {
 
     if (scrollY > scrollYPosition) {
         navbar.classList.add("bg-scroll");
-    }else {
+    } else {
         navbar.classList.remove("bg-scroll");
     }
 })
